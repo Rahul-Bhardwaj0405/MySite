@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} {% endblock%}
+
+{% block css_files %} {% endblock %}
+
+{% block content %}
+    {% if context %}
+        <ul>
+            {% for question in context %}
+                <li><a href="/polls/{{question.id}}/">{{question.question.text}}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Polls are available.</p>
+    {% endif %}
+{% endblock %}
